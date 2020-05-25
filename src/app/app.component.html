@@ -1,5 +1,5 @@
 <article role="main" class="bg-white h-full min-h-screen">
-  <app-sidebar class="sm:hidden"></app-sidebar>
+  <app-sidebar class="sm:hidden" id="1"></app-sidebar>
   <nav aria-label="Social" class="flex items-center justify-between flex-wrap bg-teal-800 p-6 pt-0 sm:pt-6">
     <section class="flex items-center flex-shrink-0 text-white mr-6">
       <svg
@@ -62,8 +62,8 @@
     </section>
   </nav>
   <section class="sm:flex flex-row pt-2">
-    <app-sidebar class="hidden sm:block"></app-sidebar>
-    <article class="mx-2">
+    <app-sidebar class="hidden sm:block" id="2"></app-sidebar>
+    <article class="mx-2 mb-32">
       <router-outlet></router-outlet>
     </article>
   </section>
