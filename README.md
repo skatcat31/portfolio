@@ -29,4 +29,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## VSCode Plugins
 
 ### Style Lint
+REQUIRED  
 This project uses the [Style Lint](https://stylelint.io/) package for linting the SCSS files due to the [TailWind CSS](https://tailwindcss.com/) Framework
+
+### Angular Schematics
+Optional
+This project uses [Angular Schematics](https://marketplace.visualstudio.com/items?itemName=cyrilletuzi.angular-schematics) optionally to make setting up the components using the Angular scaffolding templates. Requires the Angular Commandline Interface
+
+### Angular Languages Service
+REQUIRED
+This project uses the [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+
+### Tailwind CSS Intellisense
+Optional
+It just makes things easier with this plugin. [Found here](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
