@@ -30,36 +30,6 @@
               "src/styles.scss"
             ],
             "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
           }
         },
         "serve": {
@@ -68,11 +38,6 @@
             "browserTarget": "hangman:build",
             "customWebpackConfig": {
               "path": "./webpack.config.js"
-            }
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "hangman:build:production"
             }
           }
         },

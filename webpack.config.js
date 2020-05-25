@@ -3,14 +3,14 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        loader: 'postcss-loader',
+        loader: "postcss-loader",
         options: {
-          ident: 'postcss',
-          syntax: 'postcss-scss',
+          ident: "postcss",
+          syntax: "postcss-scss",
           plugins: () => [
-            require('postcss-import'),
-            require('tailwindcss'),
-            require('autoprefixer'),
+            require("postcss-import"),
+            require("tailwindcss"),
+            require("autoprefixer")
           ]
         }
       }
