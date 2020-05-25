@@ -3,3 +3,9 @@
 @import "tailwindcss/utilities";
 
 /* You can add global styles to this file, and also import other style files */
+a {
+  @apply text-blue-700 underline;
+}
+app-sidebar {
+  min-width: 25%;
+}

@@ -1,5 +1,5 @@
 import { render } from '@testing-library/angular';
-import { GameComponent as Component } from './game.component';
+import { GameComponent as Component } from './about.component';
 
 import '@testing-library/jest-dom';
 

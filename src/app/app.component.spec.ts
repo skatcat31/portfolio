@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import '@testing-library/jest-dom';
 import { Route } from './app-routing.module';
-import { MenuComponent } from './menu/menu.component';
+import { LandingComponent } from './landing/landing.component';
 
 const Component = AppComponent;
 
@@ -14,7 +14,7 @@ describe('AppComponent', () => {
     const { getByText } = await render(Component, {
       imports: [
         RouterTestingModule.withRoutes([
-          new Route('', MenuComponent)
+          new Route('', LandingComponent)
       ])
       ]
     });

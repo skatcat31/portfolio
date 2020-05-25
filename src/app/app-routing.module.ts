@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GameComponent } from './game/game.component';
-import { MenuComponent } from './menu/menu.component';
+import { AboutComponent } from './about/about.component';
+import { LandingComponent } from './landing/landing.component';
 
 export class Route {
   path: string;
@@ -13,8 +13,8 @@ export class Route {
 }
 
 const routes: Routes = [
-  new Route('', MenuComponent),
-  new Route('game', GameComponent)
+  new Route('', LandingComponent),
+  new Route('about', AboutComponent)
 ];
 
 @NgModule({
