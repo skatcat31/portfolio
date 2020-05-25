@@ -9,3 +9,23 @@ a {
 app-sidebar {
   min-width: 25%;
 }
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-2 text-teal-800;
+}
+
+app-root {
+  display: none;
+}
+
+@supports not (old: ie) {
+  app-root {
+    display: initial;
+  }
+  .ieWarning {
+    display: none;
+  }
+}
