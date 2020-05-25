@@ -7,17 +7,23 @@ a {
 }
 
 @media (max-width: 460px) {
+  nav {
+    @apply bg-teal-800 sticky left-0 top-0 text-white w-screen;
+  }
+
   input[type=checkbox] ~ section {
-    height: 0px;
-    width: 0px;
+    height: 0vh;
+    width: 0vw;
     overflow: hidden;
-    transition: height linear 0.1s;
+    transition: width 0.2s;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
   }
   
   input[type=checkbox]:checked ~ section,
   input[type=checkbox] ~ section:focus-within {
-    height: 64px;
-    width: auto;
-    overflow: visible;
+    height: 100vh;
+    width: 100vw;
   }
 }

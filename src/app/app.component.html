@@ -1,5 +1,6 @@
 <article role="main" class="bg-white h-full min-h-screen">
-  <nav aria-label="Main" class="flex items-center justify-between flex-wrap bg-teal-800 p-6">
+  <app-sidebar class="sm:hidden"></app-sidebar>
+  <nav aria-label="Social" class="flex items-center justify-between flex-wrap bg-teal-800 p-6 pt-0 sm:pt-6">
     <section class="flex items-center flex-shrink-0 text-white mr-6">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +62,7 @@
     </section>
   </nav>
   <section class="md:flex flex-row pt-2">
-    <app-sidebar></app-sidebar>
+    <app-sidebar class="hidden sm:block"></app-sidebar>
     <article class="mx-2">
       <router-outlet></router-outlet>
     </article>
