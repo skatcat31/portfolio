@@ -1,6 +1,6 @@
-# Hangman
+# Application for Tailwind CSS Front End Developer by Robert Mennell
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3. It uses TailWind CSS for styling, Jest and Testing Library for sane testing, and has featured designs done in Figma
 
 ## Development server
 
