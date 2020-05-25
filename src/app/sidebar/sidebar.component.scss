@@ -5,3 +5,19 @@ a {
 .activeLink {
   @apply bg-gray-200 shadow
 }
+
+@media (max-width: 460px) {
+  input[type=checkbox] ~ section {
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    transition: height linear 0.1s;
+  }
+  
+  input[type=checkbox]:checked ~ section,
+  input[type=checkbox] ~ section:focus-within {
+    height: 64px;
+    width: auto;
+    overflow: visible;
+  }
+}
