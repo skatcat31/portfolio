@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hangman": {
+    "portfolio": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +16,7 @@
             "customWebpackConfig": {
               "path": "./webpack.config.js"
             },
-            "outputPath": "dist/hangman",
+            "outputPath": "dist/portfolio",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -35,7 +35,7 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "hangman:build",
+            "browserTarget": "portfolio:build",
             "customWebpackConfig": {
               "path": "./webpack.config.js"
             }
@@ -44,7 +44,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hangman:build"
+            "browserTarget": "portfolio:build"
           }
         },
         "test": {
@@ -80,18 +80,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "hangman:serve"
+            "devServerTarget": "portfolio:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "hangman:serve:production"
+              "devServerTarget": "portfolio:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "hangman",
+  "defaultProject": "portfolio",
   "cli": {
     "analytics": false
   }
