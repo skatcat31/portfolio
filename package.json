@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && npm run scully -- --scanRoutes",
+    "build": "ng build  --base-href \"https://skatcat31.github.io/portfolio/\" && npm run scully",
+    "build:scan": "ng build  --base-href \"https://skatcat31.github.io/portfolio/\" && npm run scully",
     "test": "jest --coverage --config ./jest.config.js",
     "lint": "ng lint",
     "e2e": "ng e2e",
