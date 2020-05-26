@@ -2,9 +2,23 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3. It uses TailWind CSS for styling, Jest and Testing Library for sane testing, and has featured designs done in Figma
 
+## View the Github Pages
+
+You can view the deployed [Static Site on GitHub Pages](https://skatcat31.github.io/portfolio/).
+
+## Global Packages
+
+Bvious there is the [Angular CLI](https://github.com/angular/angular-cli), but there is also [Scully](https://github.com/scullyio/scully) as an SSG for deployment to GitHub Pages.
+
 ## Development server
 
+### Angular Development Server
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Scully Static Server
+
+Run `npm run scully:server` to run the Scully local server and preview the Static Site locally.
 
 ## Code scaffolding
 
@@ -12,7 +26,13 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Static Site Generator
+
+Run `npm run build` to build the project. The build artifacts will be stored in the `docs/` directory. Its builds to Static Site in production mode using [Scully](https://github.com/scullyio/scully).
+
+### Scan for new routes
+
+Run `npm run build:scan` to build the project and scan for new routes with Scully.
 
 ## Running unit tests
 
