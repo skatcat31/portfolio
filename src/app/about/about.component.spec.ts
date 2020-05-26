@@ -1,12 +1,28 @@
 import { render } from '@testing-library/angular';
-import { GameComponent as Component } from './about.component';
+import { AboutComponent as Component } from './about.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { A11yModule } from '@angular/cdk/a11y';
 
 import '@testing-library/jest-dom';
+
+const renderComp = () => render(Component, {
+  imports: [
+    RouterTestingModule.withRoutes([]),
+    A11yModule
+  ]
+});
 
 describe('AppComponent', () => {
 
   it('should create the app', async () => {
-    const { getByText } = await render(Component);
-    expect(getByText('game works!')).toBeInTheDocument();
+    const { getByText, container } = await renderComp();
+    expect(getByText('Accessibility')).toBeInTheDocument();
+    expect(getByText('Angular')).toBeInTheDocument();
+    expect(getByText('Testing')).toBeInTheDocument();
+    expect(getByText('Styles')).toBeInTheDocument();
+    expect(getByText('Browser Support')).toBeInTheDocument();
+    expect(getByText('Semantic HTML')).toBeInTheDocument();
+    expect(getByText('Check it out on GitHub!')).toBeInTheDocument();
+    expect(container.querySelectorAll('a')).toHaveLength(7);
   });
 });
