@@ -12,17 +12,17 @@ a {
   }
 
   section {
-    height: 0vh;
-    width: 0vw;
-    overflow: hidden;
-    transition: width 0.2s;
+    height: calc(100vh - 36px);
+    width: 100vw;
+    // overflow: hidden;
+    transition: left 0.2s;
     z-index: 1;
     position: absolute;
+    left: -100vw;
     background-color: white;
   }
   
   section.expanded {
-    height: 100vh;
-    width: 100vw;
+    left: 0;
   }
 }
