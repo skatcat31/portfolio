@@ -17,6 +17,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((val) => {
         this.expanded = false;
+        window.scroll(0, 0);
     });
   }
 
