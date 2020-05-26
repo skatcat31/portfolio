@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "scully": "scully",
-    "scully:serve": "scully serve"
+    "scully:serve": "ng build && npm run scully && scully serve"
   },
   "private": true,
   "dependencies": {
