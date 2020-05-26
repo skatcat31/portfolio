@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href \"https://github.com/skatcat31/portfolio/\"",
     "test": "jest --coverage --config ./jest.config.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
