@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { LandingComponent } from './landing/landing.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    A11yModule
+    A11yModule,
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]
