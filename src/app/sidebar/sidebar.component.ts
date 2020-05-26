@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit {
   @ViewChild('focusTarget') el: ElementRef;
 
   ngOnInit(): void {
-    this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((val) => {
+    this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
         this.expanded = false;
         window.scroll(0, 0);
     });
