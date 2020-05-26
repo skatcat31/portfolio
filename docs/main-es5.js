@@ -270,19 +270,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     !*** ./src/app/app-routing.module.ts ***!
     \***************************************/
 
-  /*! exports provided: Route, AppRoutingModule */
+  /*! exports provided: AppRoutingModule */
 
   /***/
   function srcAppAppRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "Route", function () {
-      return Route;
-    });
     /* harmony export (binding) */
 
 
@@ -313,13 +307,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _landing_landing_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./landing/landing.component */
     "./src/app/landing/landing.component.ts");
-
-    var Route = function Route(path, component) {
-      _classCallCheck(this, Route);
-
-      this.path = path;
-      this.component = component;
-    };
 
     var routes = [{
       path: '',
