@@ -11,7 +11,7 @@ a {
     @apply bg-teal-800 sticky left-0 top-0 text-white w-screen;
   }
 
-  input[type=checkbox] ~ section {
+  section {
     height: 0vh;
     width: 0vw;
     overflow: hidden;
@@ -21,8 +21,7 @@ a {
     background-color: white;
   }
   
-  input[type=checkbox]:checked ~ section,
-  input[type=checkbox] ~ section:focus-within {
+  section.expanded {
     height: 100vh;
     width: 100vw;
   }
