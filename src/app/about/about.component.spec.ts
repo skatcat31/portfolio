@@ -12,7 +12,7 @@ const renderComp = () => render(Component, {
   ]
 });
 
-describe('AppComponent', () => {
+describe('AboutComponent', () => {
 
   it('should create the app', async () => {
     const { getByText, container } = await renderComp();

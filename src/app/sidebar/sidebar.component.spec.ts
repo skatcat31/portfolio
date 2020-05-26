@@ -17,7 +17,7 @@ const renderComp = (mobile = false) => render(Component, {
   componentProperties: { mobile }
 });
 
-describe('AppComponent', () => {
+describe('SideBarComponent', () => {
   it('should create the desktop sidebar', async () => {
     const { container, getByText } = await renderComp();
     expect(container.querySelector('nav')).toBeInTheDocument();

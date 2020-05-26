@@ -3,7 +3,7 @@ import { LandingComponent as Component } from './landing.component';
 
 import '@testing-library/jest-dom';
 
-describe('Menu component', () => {
+describe('LandingComponent', () => {
 
   it('should render the Menu page', async () => {
     const { getByText, container, debug } = await render(Component);
