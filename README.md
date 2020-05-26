@@ -6,10 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 You can view the deployed [Static Site on GitHub Pages](https://skatcat31.github.io/portfolio/).
 
-## Global Packages
-
-Bvious there is the [Angular CLI](https://github.com/angular/angular-cli), but there is also [Scully](https://github.com/scullyio/scully) as an SSG for deployment to GitHub Pages.
-
 ## Development server
 
 ### Angular Development Server
