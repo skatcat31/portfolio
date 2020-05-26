@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,10 +15,8 @@ export class SidebarComponent implements OnInit {
   @ViewChild('focusTarget') el: ElementRef;
 
   ngOnInit(): void {
-    this.router.events.subscribe((val) => {
-      if (val instanceof NavigationEnd) {
+    this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((val) => {
         this.expanded = false;
-      }
     });
   }
 
