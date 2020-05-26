@@ -13,8 +13,8 @@ export class Route {
 }
 
 const routes: Routes = [
-  new Route('', LandingComponent),
-  new Route('about', AboutComponent)
+  { path: '', component: LandingComponent},
+  {path: 'about', component: AboutComponent}
 ];
 
 @NgModule({

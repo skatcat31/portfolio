@@ -67177,6 +67177,1226 @@ const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('9.1.4
 
 /***/ }),
 
+/***/ "./node_modules/@scullyio/ng-lib/__ivy_ngcc__/fesm2015/scullyio-ng-lib.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@scullyio/ng-lib/__ivy_ngcc__/fesm2015/scullyio-ng-lib.js ***!
+  \********************************************************************************/
+/*! exports provided: IdleMonitorService, ScullyContentComponent, ScullyContentModule, ScullyLibModule, ScullyRoutesService, TransferStateService, isScullyGenerated, isScullyRunning, ɵb, ɵc */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IdleMonitorService", function() { return IdleMonitorService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyContentComponent", function() { return ScullyContentComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyContentModule", function() { return ScullyContentModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyLibModule", function() { return ScullyLibModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyRoutesService", function() { return ScullyRoutesService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransferStateService", function() { return TransferStateService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isScullyGenerated", function() { return isScullyGenerated; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isScullyRunning", function() { return isScullyRunning; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return ScullyDefaultSettings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return SCULLY_LIB_CONFIG; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
+
+
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/config/scully-config.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+
+
+
+const _c0 = ["*"];
+function ScullyLibConfig() { }
+if (false) {}
+/** @type {?} */
+const ScullyDefaultSettings = {
+    useTransferState: true,
+    alwaysMonitor: false,
+    manualIdle: false,
+};
+/** @type {?} */
+const SCULLY_LIB_CONFIG = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionToken"]('scullyLibConfig', {
+    factory: (/**
+     * @return {?}
+     */
+    () => ScullyDefaultSettings),
+});
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/utils/fetchHttp.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @template T
+ * @param {?} url
+ * @param {?=} responseType
+ * @return {?}
+ */
+function fetchHttp(url, responseType = 'json') {
+    return new Promise((/**
+     * @param {?} resolve
+     * @param {?} reject
+     * @return {?}
+     */
+    (resolve, reject) => {
+        /** @type {?} */
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = responseType;
+        xhr.addEventListener('load', (/**
+         * @param {?} ev
+         * @return {?}
+         */
+        ev => resolve(xhr.response)));
+        xhr.addEventListener('error', (/**
+         * @param {...?} err
+         * @return {?}
+         */
+        (...err) => reject(err)));
+        xhr.open('get', url, true);
+        xhr.send();
+    }));
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/utils/isScully.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+// tslint:disable: no-string-literal
+/** @type {?} */
+const isScullyRunning = (/**
+ * @return {?}
+ */
+() => window && window['ScullyIO'] === 'running');
+/** @type {?} */
+const isScullyGenerated = (/**
+ * @return {?}
+ */
+() => window && window['ScullyIO'] === 'generated');
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/utils/merge-paths.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @param {?} base
+ * @param {?} path
+ * @return {?}
+ */
+function mergePaths(base, path) {
+    if (base.endsWith('/') && path.startsWith('/')) {
+        return `${base}${path.substr(1)}`;
+    }
+    if (!base.endsWith('/') && !path.startsWith('/')) {
+        return `${base}/${path}`;
+    }
+    return `${base}${path}`;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/transfer-state/transfer-state.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/** @type {?} */
+const SCULLY_SCRIPT_ID = `ScullyIO-transfer-state`;
+/** @type {?} */
+const SCULLY_STATE_START = `/** ___SCULLY_STATE_START___ */`;
+/** @type {?} */
+const SCULLY_STATE_END = `/** ___SCULLY_STATE_END___ */`;
+/** @type {?} */
+const initialStateDone = '__done__with__Initial__navigation__';
+/**
+ * @record
+ */
+function State() { }
+// Adding this dynamic comment to suppress ngc error around Document as a DI token.
+// https://github.com/angular/angular/issues/20351#issuecomment-344009887
+/**
+ * \@dynamic
+ */
+class TransferStateService {
+    /**
+     * @param {?} document
+     * @param {?} router
+     */
+    constructor(document, router) {
+        this.document = document;
+        this.router = router;
+        /**
+         * parse from index, or load from data.json, according to scullConfig setting
+         */
+        this.inlineOnly = false;
+        /**
+         * set the currentBase to something that it can never be
+         */
+        this.currentBaseUrl = '//';
+        /**
+         * subject to fire off incoming states
+         */
+        this.stateBS = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"]({});
+        this.state$ = this.stateBS.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} state
+         * @return {?}
+         */
+        state => state !== undefined)));
+        // emit the next url when routing is complete
+        this.nextUrl = this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} e
+         * @return {?}
+         */
+        e => e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationStart"])), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])((/**
+         * @param {?} e
+         * @return {?}
+         */
+        (e) => {
+            if (this.initialUrl === e.url) {
+                /** don't kick off on initial load to prevent flicker */
+                this.initialUrl = initialStateDone;
+                return rxjs__WEBPACK_IMPORTED_MODULE_3__["NEVER"];
+            }
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(e);
+        })), 
+        /** reset the state, so new components will never get stale data */
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
+         * @return {?}
+         */
+        () => this.stateBS.next(undefined))), 
+        /** prevent emitting before navigation to _this_ URL is done. */
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])((/**
+         * @param {?} e
+         * @return {?}
+         */
+        (e) => this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} ev
+         * @return {?}
+         */
+        ev => ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"] && ev.url === e.url)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["first"])()))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
+         * @param {?} ev
+         * @return {?}
+         */
+        (ev) => ev.urlAfterRedirects || ev.url)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])(1));
+    }
+    /**
+     * @return {?}
+     */
+    startMonitoring() {
+        if (window && window['ScullyIO-injected'] && window['ScullyIO-injected'].inlineStateOnly) {
+            this.inlineOnly = true;
+        }
+        this.setupEnvForTransferState();
+        this.setupStartNavMonitoring();
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    setupEnvForTransferState() {
+        if (isScullyRunning()) {
+            this.injectScript();
+            // In Scully puppeteer
+            /** @type {?} */
+            const exposed = window['ScullyIO-exposed'] || {};
+            if (exposed.transferState) {
+                this.stateBS.next(exposed.transferState);
+                this.saveState(exposed.transferState);
+            }
+        }
+        else if (isScullyGenerated()) {
+            // On the client AFTER scully rendered it
+            this.initialUrl = window.location.pathname || '__no_NO_no__';
+            this.initialUrl =
+                this.initialUrl !== '/' && this.initialUrl.endsWith('/')
+                    ? this.initialUrl.slice(0, -1)
+                    : this.initialUrl;
+            /** set the initial state */
+            this.stateBS.next((window && window[SCULLY_SCRIPT_ID]) || {});
+        }
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    injectScript() {
+        this.script = this.document.createElement('script');
+        this.script.setAttribute('id', SCULLY_SCRIPT_ID);
+        /** @type {?} */
+        let last = document.body.lastChild;
+        while (last.previousSibling.nodeName === 'SCRIPT') {
+            last = (/** @type {?} */ (last.previousSibling));
+        }
+        document.body.insertBefore(this.script, last);
+    }
+    /**
+     * Getstate will return an observable that containes the data.
+     * It does so right after the navigation for the page has finished.
+     * please note, this works SYNC on initial route, preventing a flash of content.
+     * @template T
+     * @param {?} name The name of the state to
+     * @return {?}
+     */
+    getState(name) {
+        /** start of the fetch for the current active route. */
+        this.fetchTransferState();
+        return this.state$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["pluck"])(name));
+    }
+    /**
+     * Read the current state, and see if it has an value for the name.
+     * (note the value it containes still can be undefined!)
+     * @param {?} name
+     * @return {?}
+     */
+    stateHasKey(name) {
+        return this.stateBS.value && this.stateBS.value.hasOwnProperty(name);
+    }
+    /**
+     * Read the current state, and see if it has an value for the name.
+     * Checks also if there is actually an value in the state.
+     * @param {?} name
+     * @return {?}
+     */
+    stateKeyHasValue(name) {
+        return this.stateBS.value && this.stateBS.value.hasOwnProperty(name) && this.stateBS.value[name] != null;
+    }
+    /**
+     * SetState will update the script in the generated page with data added.
+     * @template T
+     * @param {?} name
+     * @param {?} val
+     * @return {?}
+     */
+    setState(name, val) {
+        /** @type {?} */
+        const newState = Object.assign(Object.assign({}, this.stateBS.value), { [name]: val });
+        this.stateBS.next(newState);
+        this.saveState(newState);
+    }
+    /**
+     * @private
+     * @param {?} newState
+     * @return {?}
+     */
+    saveState(newState) {
+        if (isScullyRunning()) {
+            this.script.textContent = `window['${SCULLY_SCRIPT_ID}']=${SCULLY_STATE_START}${JSON.stringify(newState)}${SCULLY_STATE_END}`;
+        }
+    }
+    /**
+     * starts monitoring the router, and keep the url from the last completed navigation handy.
+     * @private
+     * @return {?}
+     */
+    setupStartNavMonitoring() {
+        if (!isScullyGenerated()) {
+            return;
+        }
+        /** start monitoring the routes */
+        this.nextUrl.subscribe();
+    }
+    /**
+     * @template T
+     * @param {?} name
+     * @param {?} originalState
+     * @return {?}
+     */
+    useScullyTransferState(name, originalState) {
+        if (isScullyGenerated()) {
+            return this.getState(name);
+        }
+        return originalState.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
+         * @param {?} state
+         * @return {?}
+         */
+        state => this.setState(name, state))));
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    fetchTransferState() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            /**
+             * helper to read the part before the first slash (ignores leading slash)
+             * @type {?}
+             */
+            const base = (/**
+             * @param {?} url
+             * @return {?}
+             */
+            (url) => url.split('/').filter((/**
+             * @param {?} part
+             * @return {?}
+             */
+            part => part.trim() !== ''))[0]);
+            /** put this in the next event cycle so the correct route can be read */
+            yield new Promise((/**
+             * @param {?} r
+             * @return {?}
+             */
+            r => setTimeout(r, 0)));
+            /**
+             * get the current url
+             * @type {?}
+             */
+            const currentUrl = yield this.nextUrl.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).toPromise();
+            /** @type {?} */
+            const baseUrl = base(currentUrl);
+            if (this.currentBaseUrl === baseUrl) {
+                /** already monitoring, don't tho a thing */
+                return;
+            }
+            /** keep the baseUrl for later reference */
+            this.currentBaseUrl = baseUrl;
+            this.nextUrl
+                .pipe(
+            /** keep updating till we move to another route */
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeWhile"])((/**
+             * @param {?} url
+             * @return {?}
+             */
+            url => base(url) === this.currentBaseUrl)), 
+            // Get the next route's data from the the index or data file
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])((/**
+             * @param {?} url
+             * @return {?}
+             */
+            url => (this.inlineOnly ? this.readFromIndex(url) : this.readFromJson(url)))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])((/**
+             * @param {?} e
+             * @return {?}
+             */
+            e => {
+                // TODO: come up with better error text.
+                /** the developer needs to know, but its not fatal, so just return an empty state */
+                console.warn('Error while loading of parsing Scully state:', e);
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])({});
+            })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
+             * @param {?} newState
+             * @return {?}
+             */
+            newState => {
+                /** and activate the state in the components. on any error it will be empty */
+                this.stateBS.next(newState);
+            })))
+                .subscribe({
+                /**
+                 * when completes (different URL)
+                 */
+                complete: (/**
+                 * @return {?}
+                 */
+                () => {
+                    /** reset the currentBaseUrl */
+                    this.currentBaseUrl = '//';
+                }),
+            });
+        });
+    }
+    /**
+     * @private
+     * @param {?} url
+     * @return {?}
+     */
+    readFromJson(url) {
+        return fetchHttp(mergePaths(url, '/data.json'));
+    }
+    /**
+     * @private
+     * @param {?} url
+     * @return {?}
+     */
+    readFromIndex(url) {
+        return fetchHttp(url + '/index.html', 'text').then((/**
+         * @param {?} html
+         * @return {?}
+         */
+        (html) => {
+            /** @type {?} */
+            const newStateStr = html.split(SCULLY_STATE_START)[1].split(SCULLY_STATE_END)[0];
+            return JSON.parse(newStateStr);
+        }));
+    }
+}
+TransferStateService.ɵfac = function TransferStateService_Factory(t) { return new (t || TransferStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_5__["DOCUMENT"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
+/** @nocollapse */
+TransferStateService.ctorParameters = () => [
+    { type: Document, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["DOCUMENT"],] }] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+/** @nocollapse */ TransferStateService.ɵprov = Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"])({ factory: function TransferStateService_Factory() { return new TransferStateService(Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"])(_angular_common__WEBPACK_IMPORTED_MODULE_5__["DOCUMENT"]), Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"])(_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); }, token: TransferStateService, providedIn: "root" });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](TransferStateService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: Document, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["DOCUMENT"]]
+            }] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/idleMonitor/idle-monitor.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function LocalState() { }
+if (false) {}
+if (window) {
+    window.addEventListener('AngularReady', (/**
+     * @param {?} ev
+     * @return {?}
+     */
+    ev => {
+        console.log('appReady fired', ev);
+    }));
+}
+class IdleMonitorService {
+    /**
+     * @param {?} zone
+     * @param {?} router
+     * @param {?} conf
+     * @param {?} tss
+     */
+    constructor(zone, router, conf, tss) {
+        this.zone = zone;
+        this.router = router;
+        /**
+         * store the 'landing' url so we can skip it in idle-check.
+         */
+        this.initialUrl = dropEndingSlash(window && window.location.pathname) || '';
+        this.imState = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"]({
+            idle: false,
+            timeOut: 5 * 1000,
+        });
+        this.idle$ = this.imState.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["pluck"])('idle'));
+        this.initApp = new Event('AngularInitialized', { bubbles: true, cancelable: false });
+        this.appReady = new Event('AngularReady', { bubbles: true, cancelable: false });
+        this.appTimeout = new Event('AngularTimeout', { bubbles: true, cancelable: false });
+        /** provide the default for missing conf paramter */
+        this.scullyLibConfig = Object.assign({}, ScullyDefaultSettings, conf);
+        /** @type {?} */
+        const exposed = window['ScullyIO-exposed'] || {};
+        /** @type {?} */
+        const manualIdle = !!exposed.manualIdle;
+        if (!this.scullyLibConfig.manualIdle &&
+            window &&
+            (this.scullyLibConfig.alwaysMonitor || isScullyRunning())) {
+            window.dispatchEvent(this.initApp);
+            this.router.events
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+             * @param {?} ev
+             * @return {?}
+             */
+            ev => ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"] && ev.urlAfterRedirects !== undefined)), 
+            /** don't check the page that has this setting. event is only importand on page load */
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+             * @param {?} ev
+             * @return {?}
+             */
+            (ev) => (manualIdle ? ev.urlAfterRedirects !== this.initialUrl : true))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
+             * @return {?}
+             */
+            () => this.zoneIdleCheck())))
+                .subscribe();
+        }
+        if (this.scullyLibConfig.manualIdle) {
+            /** we still need the init event. */
+            window.dispatchEvent(this.initApp);
+        }
+        if (this.scullyLibConfig.useTransferState) {
+            /** don't start monitoring if people don't use the transferState */
+            tss.startMonitoring();
+        }
+    }
+    /**
+     * @return {?}
+     */
+    fireManualMyAppReadyEvent() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return window.dispatchEvent(this.appReady);
+        });
+    }
+    /**
+     * @return {?}
+     */
+    init() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.idle$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).toPromise();
+        });
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    zoneIdleCheck() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            if (Zone === undefined) {
+                return this.simpleTimeout();
+            }
+            /** @type {?} */
+            const taskTrackingZone = Zone.current.get('TaskTrackingZone');
+            if (taskTrackingZone === undefined) {
+                return this.simpleTimeout();
+            }
+            if (this.imState.value.idle) {
+                yield this.setState('idle', false);
+            }
+            /** run the actual check for 'idle' outsides zone, otherwise it will never come to an end. */
+            this.zone.runOutsideAngular((/**
+             * @return {?}
+             */
+            () => {
+                /** @type {?} */
+                let tCancel;
+                /** @type {?} */
+                let count = 0;
+                /** @type {?} */
+                const startTime = Date.now();
+                /** @type {?} */
+                const monitor = (/**
+                 * @return {?}
+                 */
+                () => {
+                    clearTimeout(tCancel);
+                    // console.table(taskTrackingZone.macroTasks);
+                    if (Date.now() - startTime > 30 * 1000) {
+                        /** bail out after 30 seconds. */
+                        window.dispatchEvent(this.appTimeout);
+                        return;
+                    }
+                    if ((taskTrackingZone.macroTasks.length > 0 &&
+                        taskTrackingZone.macroTasks.find((/**
+                         * @param {?} z
+                         * @return {?}
+                         */
+                        (z) => z.source.includes('XMLHttpRequest'))) !== undefined) ||
+                        count < 1 // make sure it runs at least once!
+                    ) {
+                        tCancel = setTimeout((/**
+                         * @return {?}
+                         */
+                        () => {
+                            count += 1;
+                            monitor();
+                        }), 50);
+                        return;
+                    }
+                    window.dispatchEvent(this.appReady);
+                    this.setState('idle', true);
+                });
+                monitor();
+            }));
+        });
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    simpleTimeout() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            /** zone not available, use a timeout instead. */
+            console.warn('Scully is using timeouts, add the needed polyfills instead!');
+            yield new Promise((/**
+             * @param {?} r
+             * @return {?}
+             */
+            r => setTimeout(r, this.imState.value.timeOut)));
+            window.dispatchEvent(this.appReady);
+        });
+    }
+    /**
+     * @param {?} milliseconds
+     * @return {?}
+     */
+    setPupeteerTimeoutValue(milliseconds) {
+        this.imState.next(Object.assign(Object.assign({}, this.imState.value), { timeOut: milliseconds }));
+    }
+    /**
+     * @private
+     * @param {?} key
+     * @param {?} value
+     * @return {?}
+     */
+    setState(key, value) {
+        this.imState.next(Object.assign(Object.assign({}, this.imState.value), { [key]: value }));
+    }
+}
+IdleMonitorService.ɵfac = function IdleMonitorService_Factory(t) { return new (t || IdleMonitorService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](SCULLY_LIB_CONFIG), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](TransferStateService)); };
+/** @nocollapse */
+IdleMonitorService.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [SCULLY_LIB_CONFIG,] }] },
+    { type: TransferStateService }
+];
+/** @nocollapse */ IdleMonitorService.ɵprov = Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"])({ factory: function IdleMonitorService_Factory() { return new IdleMonitorService(Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"])(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]), Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"])(_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"])(SCULLY_LIB_CONFIG), Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"])(TransferStateService)); }, token: IdleMonitorService, providedIn: "root" });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](IdleMonitorService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [SCULLY_LIB_CONFIG]
+            }] }, { type: TransferStateService }]; }, null); })();
+if (false) {}
+/**
+ * @param {?} str
+ * @return {?}
+ */
+function dropEndingSlash(str) {
+    return str.endsWith('/') ? str.slice(0, -1) : str;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/route-service/scully-routes.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ScullyRoute() { }
+if (false) {}
+class ScullyRoutesService {
+    constructor() {
+        this.refresh = new rxjs__WEBPACK_IMPORTED_MODULE_3__["ReplaySubject"](1);
+        this.allRoutes$ = this.refresh.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])((/**
+         * @return {?}
+         */
+        () => fetchHttp('/assets/scully-routes.json'))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])((/**
+         * @return {?}
+         */
+        () => {
+            console.warn('Scully routes file not found, are you running the Scully generated version of your site?');
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])((/** @type {?} */ ([])));
+        })), 
+        /** filter out all non-array results */
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} routes
+         * @return {?}
+         */
+        routes => Array.isArray(routes))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(this.cleanDups), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        this.available$ = this.allRoutes$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
+         * @param {?} list
+         * @return {?}
+         */
+        list => list.filter((/**
+         * @param {?} r
+         * @return {?}
+         */
+        r => (r.hasOwnProperty('published') ? r.published !== false : true))))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        this.unPublished$ = this.allRoutes$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
+         * @param {?} list
+         * @return {?}
+         */
+        list => list.filter((/**
+         * @param {?} r
+         * @return {?}
+         */
+        r => (r.hasOwnProperty('published') ? r.published === false : false))))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        this.topLevel$ = this.available$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
+         * @param {?} routes
+         * @return {?}
+         */
+        routes => routes.filter((/**
+         * @param {?} r
+         * @return {?}
+         */
+        (r) => !r.route.slice(1).includes('/'))))), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["shareReplay"])({ refCount: false, bufferSize: 1 }));
+        /** kick off first cycle */
+        this.reload();
+    }
+    /**
+     * @return {?}
+     */
+    getCurrent() {
+        if (!location) {
+            /** probably not in a browser, no current location available */
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])();
+        }
+        /** @type {?} */
+        const curLocation = location.pathname.trim();
+        return this.available$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((/**
+         * @param {?} list
+         * @return {?}
+         */
+        list => list.find((/**
+         * @param {?} r
+         * @return {?}
+         */
+        r => curLocation === r.route.trim() ||
+            (r.slugs && Array.isArray(r.slugs) && r.slugs.find((/**
+             * @param {?} slug
+             * @return {?}
+             */
+            slug => curLocation.endsWith(slug.trim())))))))));
+    }
+    /**
+     * @private
+     * @param {?} routes
+     * @return {?}
+     */
+    cleanDups(routes) {
+        /** @type {?} */
+        const m = new Map();
+        routes.forEach((/**
+         * @param {?} r
+         * @return {?}
+         */
+        r => m.set(r.sourceFile || r.route, r)));
+        return [...m.values()];
+    }
+    /**
+     * @return {?}
+     */
+    reload() {
+        this.refresh.next();
+    }
+}
+ScullyRoutesService.ɵfac = function ScullyRoutesService_Factory(t) { return new (t || ScullyRoutesService)(); };
+/** @nocollapse */
+ScullyRoutesService.ctorParameters = () => [];
+/** @nocollapse */ ScullyRoutesService.ɵprov = Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"])({ factory: function ScullyRoutesService_Factory() { return new ScullyRoutesService(); }, token: ScullyRoutesService, providedIn: "root" });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ScullyRoutesService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return []; }, null); })();
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/utils/findComments.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * Returns an array of nodes coninting all the html comments in the element.
+ * When a searchText is given this is narrowed down to only comments that contian this text
+ * @param {?} rootElem Element to search nto
+ * @param {?=} searchText optional string that needs to be in a HTML comment
+ * @return {?}
+ */
+function findComments(rootElem, searchText) {
+    /** @type {?} */
+    const comments = [];
+    // Fourth argument, which is actually obsolete according to the DOM4 standard, seems required in IE 11
+    /** @type {?} */
+    const iterator = document.createNodeIterator(rootElem, NodeFilter.SHOW_COMMENT, {
+        acceptNode: (/**
+         * @param {?} node
+         * @return {?}
+         */
+        node => {
+            // Logic to determine whether to accept, reject or skip node
+            // In this case, only accept nodes that have content
+            // that is containing our searchText, by rejecting any other nodes.
+            if (searchText && node.nodeValue && !node.nodeValue.includes(searchText)) {
+                return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+        }),
+    }
+    // , false // IE-11 support requires this parameter.
+    );
+    /** @type {?} */
+    let curNode;
+    // tslint:disable-next-line: no-conditional-assignment
+    while ((curNode = iterator.nextNode())) {
+        comments.push(curNode);
+    }
+    return comments;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/scully-content/scully-content.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ScullyContent() { }
+if (false) {}
+/**
+ * this is needed, because otherwise the CLI borks while building
+ * @type {?}
+ */
+const scullyBegin = '<!--scullyContent-begin-->';
+/** @type {?} */
+const scullyEnd = '<!--scullyContent-end-->';
+class ScullyContentComponent {
+    /**
+     * @param {?} elmRef
+     * @param {?} srs
+     * @param {?} router
+     */
+    constructor(elmRef, srs, router) {
+        this.elmRef = elmRef;
+        this.srs = srs;
+        this.router = router;
+        this.elm = (/** @type {?} */ (this.elmRef.nativeElement));
+        /**
+         * pull in all  available routes into an eager promise
+         */
+        this.routes = this.srs.allRoutes$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).toPromise();
+        /**
+         * monitor the router, so we can update while navigating in the same 'page' see #311
+         */
+        this.routeUpdates$ = this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])((/**
+         * @param {?} ev
+         * @return {?}
+         */
+        ev => ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"])), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])((/**
+         * @param {?} r
+         * @return {?}
+         */
+        r => this.replaceContent())));
+        this.routeSub = this.routeUpdates$.subscribe();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        // /** make sure the idle-check is loaded. */
+        // this.idle.init();
+        if (this.elm) {
+            /** this will only fire in a browser environment */
+            this.handlePage();
+        }
+    }
+    /**
+     * Loads the static content from scully into the view
+     * Will fetch the content from sibling links with xmlHTTPrequest
+     * @private
+     * @return {?}
+     */
+    handlePage() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            /** @type {?} */
+            const curPage = location.href;
+            if (this.lastHandled === curPage) {
+                /**
+                 * Due to the fix we needed for #311
+                 * it might happen that this routine is called
+                 * twice for the same page.
+                 * this code will make sure the second one is ignored.
+                 */
+                return;
+            }
+            this.lastHandled = curPage;
+            /** @type {?} */
+            const template = document.createElement('template');
+            /** @type {?} */
+            const currentCssId = this.getCSSId(this.elm);
+            if (window.scullyContent) {
+                /**
+                 * upgrade existing static content
+                 * @type {?}
+                 */
+                const htmlString = window.scullyContent.html;
+                if (currentCssId !== window.scullyContent.cssId) {
+                    /** replace the angular cssId */
+                    template.innerHTML = htmlString.split(window.scullyContent.cssId).join(currentCssId);
+                }
+                else {
+                    template.innerHTML = htmlString;
+                }
+            }
+            else {
+                /**
+                 *   NOTE
+                 * when updateting the texts for the errors, make sure you leave the
+                 *  `id="___scully-parsing-error___"`
+                 * in there. That way users can detect rendering errors in their CI
+                 * on a reliable way.
+                 */
+                yield fetchHttp(curPage + '/index.html', 'text')
+                    .then((/**
+                 * @param {?} html
+                 * @return {?}
+                 */
+                (html) => {
+                    try {
+                        /** @type {?} */
+                        const htmlString = html.split(scullyBegin)[1].split(scullyEnd)[0];
+                        if (htmlString.includes('_ngcontent')) {
+                            /**
+                             * update the angular cssId
+                             * @type {?}
+                             */
+                            const atr = '_ngcontent' + htmlString.split('_ngcontent')[1].split('=')[0];
+                            template.innerHTML = htmlString.split(atr).join(currentCssId);
+                        }
+                    }
+                    catch (e) {
+                        template.innerHTML = `<h2 id="___scully-parsing-error___">Sorry, could not parse static page content</h2>
+            <p>This might happen if you are not using the static generated pages.</p>`;
+                    }
+                }))
+                    .catch((/**
+                 * @param {?} e
+                 * @return {?}
+                 */
+                e => {
+                    template.innerHTML =
+                        '<h2 id="___scully-parsing-error___">Sorry, could not load static page content</h2>';
+                    console.error('problem during loading static scully content', e);
+                }));
+            }
+            /**
+             * insert the whole thing just before the `<scully-content>` element
+             * @type {?}
+             */
+            const parent = this.elm.parentElement || document.body;
+            /** @type {?} */
+            const begin = document.createComment('scullyContent-begin');
+            /** @type {?} */
+            const end = document.createComment('scullyContent-end');
+            parent.insertBefore(begin, this.elm);
+            parent.insertBefore(template.content, this.elm);
+            parent.insertBefore(end, this.elm);
+            /** upgrade all hrefs to simulated routelinks  */
+            document.querySelectorAll('[href]').forEach(this.upgradeToRoutelink.bind(this));
+        });
+    }
+    /**
+     * upgrade a **href** attributes to links that respect the Angular router
+     * and don't do a full page reload. Only works on links that are found in the
+     * Scully route config file.
+     * @param {?} elm the element containing the **hrefs**
+     * @return {?}
+     */
+    upgradeToRoutelink(elm) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            /** @type {?} */
+            const routes = yield this.routes;
+            /** @type {?} */
+            const lnk = elm.getAttribute('href').toLowerCase();
+            /** @type {?} */
+            const route = routes.find((/**
+             * @param {?} r
+             * @return {?}
+             */
+            r => r.route.toLowerCase() === lnk));
+            /** only upgrade routes known by scully. */
+            if (lnk && route) {
+                elm.onclick = (/**
+                 * @param {?} ev
+                 * @return {?}
+                 */
+                (ev) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                    /** @type {?} */
+                    const splitRoute = route.route.split(`/`);
+                    /** @type {?} */
+                    const curSplit = location.pathname.split('/');
+                    // loose last "part" of route
+                    curSplit.pop();
+                    ev.preventDefault();
+                    /** @type {?} */
+                    const routed = yield this.router.navigate(splitRoute).catch((/**
+                     * @param {?} e
+                     * @return {?}
+                     */
+                    e => {
+                        console.error('routing error', e);
+                        return false;
+                    }));
+                    if (!routed) {
+                        return;
+                    }
+                    /** check for the same route with different "data", and NOT a level higher (length) */
+                    if (curSplit.every((/**
+                     * @param {?} part
+                     * @param {?} i
+                     * @return {?}
+                     */
+                    (part, i) => splitRoute[i] === part)) && splitRoute.length > curSplit.length) {
+                        setTimeout((/**
+                         * @return {?}
+                         */
+                        () => this.replaceContent()), 10); // a small delay, so we are sure the angular parts in the page are settled enough
+                    }
+                }));
+            }
+        });
+    }
+    /**
+     * @private
+     * @return {?}
+     */
+    replaceContent() {
+        /**
+         * as Angular doesn't destroy the component if we stay on the same page,
+         * we have to manually delete old content. Also we need to kick of loading
+         * the new content. handlePage() takes care of that.
+         */
+        /** delete the content, as it is now out of date! */
+        window.scullyContent = undefined;
+        /** @type {?} */
+        const parent = this.elm.parentElement;
+        /** @type {?} */
+        let cur = (/** @type {?} */ (findComments(parent, 'scullyContent-begin')[0]));
+        while (cur && cur !== this.elm) {
+            /** @type {?} */
+            const next = cur.nextSibling;
+            parent.removeChild(cur);
+            cur = next;
+        }
+        this.handlePage();
+    }
+    /**
+     * @param {?} elm
+     * @return {?}
+     */
+    getCSSId(elm) {
+        return elm.getAttributeNames().find((/**
+         * @param {?} a
+         * @return {?}
+         */
+        a => a.startsWith('_ngcontent'))) || 'none_found';
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+        this.routeSub.unsubscribe();
+    }
+}
+ScullyContentComponent.ɵfac = function ScullyContentComponent_Factory(t) { return new (t || ScullyContentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](ScullyRoutesService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
+ScullyContentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ScullyContentComponent, selectors: [["scully-content"]], ngContentSelectors: _c0, decls: 1, vars: 0, template: function ScullyContentComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](0);
+    } }, styles: ["\n      :host {\n        display: none;\n      }\n      scully-content {\n        display: none;\n      }\n    "], encapsulation: 2, changeDetection: 0 });
+/** @nocollapse */
+ScullyContentComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
+    { type: ScullyRoutesService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ScullyContentComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+        args: [{
+                // tslint:disable-next-line: component-selector
+                selector: 'scully-content',
+                template: '<ng-content></ng-content>',
+                changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
+                preserveWhitespaces: true,
+                styles: [`
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    `]
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }, { type: ScullyRoutesService }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/scully-content/scully-content.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class ScullyContentModule {
+}
+ScullyContentModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: ScullyContentModule });
+ScullyContentModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function ScullyContentModule_Factory(t) { return new (t || ScullyContentModule)(); } });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](ScullyContentModule, { declarations: [ScullyContentComponent], exports: [ScullyContentComponent] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ScullyContentModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
+        args: [{
+                declarations: [ScullyContentComponent],
+                exports: [ScullyContentComponent]
+            }]
+    }], null, null); })();
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/scully-lib.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class ScullyLibModule {
+    /**
+     * @param {?} idle
+     */
+    constructor(idle) {
+        this.idle = idle;
+    }
+    /**
+     * We use a little trick to get a working idle-service.
+     * First, we separate out the component in a separate module to prevent a circulair injection
+     * second we create a constuctor that activates the IdleMonitorService. as that is provided for 'root'
+     * there will be only 1 instance in our app.
+     * We don't need forRoot, as we are not configuring anything in here.
+     * @param {?=} config
+     * @return {?}
+     */
+    static forRoot(config = ScullyDefaultSettings) {
+        return {
+            ngModule: ScullyLibModule,
+            providers: [{ provide: SCULLY_LIB_CONFIG, useValue: config }],
+        };
+    }
+}
+ScullyLibModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: ScullyLibModule });
+ScullyLibModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function ScullyLibModule_Factory(t) { return new (t || ScullyLibModule)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](IdleMonitorService)); }, imports: [[ScullyContentModule],
+        ScullyContentModule] });
+/** @nocollapse */
+ScullyLibModule.ctorParameters = () => [
+    { type: IdleMonitorService }
+];
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](ScullyLibModule, { imports: [ScullyContentModule], exports: [ScullyContentModule] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](ScullyLibModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
+        args: [{
+                imports: [ScullyContentModule],
+                exports: [ScullyContentModule]
+            }]
+    }], function () { return [{ type: IdleMonitorService }]; }, null); })();
+if (false) {}
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: scullyio-ng-lib.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+
+
+//# sourceMappingURL=scullyio-ng-lib.js.map
+
+/***/ }),
+
 /***/ "./node_modules/rxjs/_esm2015/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/rxjs/_esm2015/index.js ***!
@@ -78246,6 +79466,254 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/tslib/tslib.es6.js":
+/*!*****************************************!*\
+  !*** ./node_modules/tslib/tslib.es6.js ***!
+  \*****************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __exportStar(m, exports) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result.default = mod;
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, privateMap) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+    }
+    return privateMap.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, privateMap, value) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+    }
+    privateMap.set(receiver, value);
+    return value;
+}
+
 
 /***/ })
 
