@@ -1,6 +1,6 @@
-<nav *ngIf="mobile">
+<nav *ngIf="mobile" cdkTrapFocus="{{expanded}}">
   <button
-    class="flex items-center sm:hidden"
+    class="flex items-center w-screen"
     (click)="toggleChecked()"
     [attr.aria-expanded]="expanded"
     for="sidebar:section"
@@ -13,7 +13,7 @@
     Navigation
   </button>
   <section
-    class="flex flex-col {{expanded ? 'expanded' : ''}}"
+    class="flex flex-col shadow-lg {{expanded ? 'expanded' : ''}}"
     [attr.aria-hidden]="!expanded"
     id="sidebar:section"
   >
