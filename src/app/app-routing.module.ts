@@ -3,15 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { LandingComponent } from './landing/landing.component';
 
-export class Route {
-  path: string;
-  component: any;
-  constructor(path, component) {
-    this.path = path;
-    this.component = component;
-  }
-}
-
 const routes: Routes = [
   { path: '', component: LandingComponent},
   {path: 'about', component: AboutComponent}
