@@ -1,14 +1,48 @@
-<nav>
-  <input type="checkbox" id="sidebar:toggleNav{{id}}" class="hidden" aria-hidden="true">
-  <label for="sidebar:toggleNav{{id}}" aria-hidden="true" class="flex items-center sm:hidden">
+<nav *ngIf="mobile" cdkTrapFocus="{{expanded}}" class="z-10">
+  <button
+    class="flex items-center w-screen"
+    (click)="toggleChecked()"
+    [attr.aria-expanded]="expanded"
+    for="sidebar:section"
+  >
     <svg viewBox="0 0 100 80" width="20" height="20" class="m-2 ml-6">
       <rect width="100" height="20" fill="white"></rect>
       <rect y="30" width="100" height="20" fill="white"></rect>
       <rect y="60" width="100" height="20" fill="white"></rect>
     </svg>
     Navigation
-  </label>
-  <section class="flex flex-col">
+  </button>
+  <section
+    class="flex flex-col pt-2 {{expanded ? 'expanded' : ''}}"
+    [attr.aria-hidden]="!expanded"
+    id="sidebar:section"
+  >
+    <a
+      routerLink="/"
+      routerLinkActive="activeLink"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [attr.aria-hidden]="!expanded"
+      [tabIndex]="!expanded ? -1 : 0"
+      #focusTarget
+    >
+      About Me
+    </a>
+    <a
+      routerLink="/about"
+      routerLinkActive="activeLink"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [attr.aria-hidden]="!expanded"
+      [tabIndex]="!expanded ? -1 : 0"
+    >
+      Technical
+    </a>
+  </section>
+</nav>
+
+<nav *ngIf="!mobile">
+  <section
+    class="flex flex-col"
+  >
     <a
       routerLink="/"
       routerLinkActive="activeLink"
@@ -21,7 +55,7 @@
       routerLinkActive="activeLink"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      About Site
+      Technical
     </a>
   </section>
 </nav>
