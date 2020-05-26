@@ -24,5 +24,6 @@ describe('AboutComponent', () => {
     expect(getByText('Semantic HTML')).toBeInTheDocument();
     expect(getByText('Check it out on GitHub!')).toBeInTheDocument();
     expect(container.querySelectorAll('a')).toHaveLength(7);
+    expect(container.querySelectorAll('p')).toHaveLength(7);
   });
 });
