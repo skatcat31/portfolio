@@ -14,7 +14,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ### Scully Static Server
 
-Run `npm run scully:server` to run the Scully local server and preview the Static Site locally.
+Run `npm run scully:serve` to run the Scully local server and preview the Static Site locally.
 
 ## Code scaffolding
 
