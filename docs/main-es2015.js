@@ -486,9 +486,10 @@ class SidebarComponent {
     }
     ngOnInit() {
         this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(e => e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"])).subscribe(() => {
+            var _a;
             this.expanded = false;
             window.scroll(0, 0);
-            this.focusButton.nativeElement.focus();
+            (_a = this.focusButton) === null || _a === void 0 ? void 0 : _a.nativeElement.focus();
         });
     }
     toggleChecked() {

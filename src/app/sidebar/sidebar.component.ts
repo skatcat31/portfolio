@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
         this.expanded = false;
         window.scroll(0, 0);
-        this.focusButton.nativeElement.focus();
+        this.focusButton?.nativeElement.focus();
     });
   }
 

@@ -979,10 +979,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(function (e) {
             return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"];
           })).subscribe(function () {
+            var _a;
+
             _this.expanded = false;
             window.scroll(0, 0);
-
-            _this.focusButton.nativeElement.focus();
+            (_a = _this.focusButton) === null || _a === void 0 ? void 0 : _a.nativeElement.focus();
           });
         }
       }, {
