@@ -3,7 +3,7 @@ a {
 }
 
 .activeLink {
-  @apply bg-gray-200 shadow
+  @apply bg-gray-200 shadow;
 }
 
 @media (max-width: 639px) {
@@ -12,17 +12,6 @@ a {
   }
 
   section {
-    height: calc(100vh - 36px);
-    width: 100vw;
-    // overflow: hidden;
-    transition: left 0.2s;
-    z-index: 1;
-    position: absolute;
-    left: -100vw;
-    background-color: white;
-  }
-  
-  section.expanded {
-    left: 0;
+    transition: width 0.2s;
   }
 }
