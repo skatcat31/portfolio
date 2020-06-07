@@ -17,25 +17,16 @@
     class="flex flex-col pt-2 h-almost-screen mt-8 w-0 absolute bg-white top-0 overflow-x-hidden {{expanded ? 'w-full' : 'overflow-x-hidden'}}"
     [attr.aria-hidden]="!expanded"
     id="sidebar:section"
+    #focusTarget
   >
-    <a
-      routerLink="/"
-      routerLinkActive="activeLink"
-      [routerLinkActiveOptions]="{ exact: true }"
-      [attr.aria-hidden]="!expanded"
-      [tabIndex]="!expanded ? -1 : 0"
-      #focusTarget
-    >
-      About Me
-    </a>
-    <a
-      routerLink="/about"
+    <a *ngFor="let link of links; index as i"
+      [routerLink]="link.route"
       routerLinkActive="activeLink"
       [routerLinkActiveOptions]="{ exact: true }"
       [attr.aria-hidden]="!expanded"
       [tabIndex]="!expanded ? -1 : 0"
     >
-      Technical
+      {{link.text}}
     </a>
   </section>
 </nav>
@@ -44,19 +35,12 @@
   <section
     class="flex flex-col"
   >
-    <a
-      routerLink="/"
+    <a *ngFor="let link of links; index as i"
+      [routerLink]="link.route"
       routerLinkActive="activeLink"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      About Me
-    </a>
-    <a
-      routerLink="/about"
-      routerLinkActive="activeLink"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      Technical
+      {{link.text}}
     </a>
   </section>
 </nav>

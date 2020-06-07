@@ -13,12 +13,17 @@ export class SidebarComponent implements OnInit {
   hasSetFocus = false;
   @Input() mobile = false;
   @ViewChild('closeFocus') focusButton: ElementRef;
-  @ViewChild('focusTarget') focusLink: ElementRef;
+  @ViewChild('focusTarget') focusTarget: ElementRef;
+
+  links = [
+    { route: '', text: 'About Me' },
+    { route: '/about', text: 'Technical' }
+  ];
 
   ngOnInit(): void {
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
         this.expanded = false;
-        window.scroll(0, 0);
+        window?.scroll(0, 0);
         this.focusButton?.nativeElement.focus();
     });
   }
@@ -26,7 +31,7 @@ export class SidebarComponent implements OnInit {
   toggleChecked() {
     this.expanded = !this.expanded;
     if ( this.expanded ) {
-      this.focusLink.nativeElement.focus();
+      this.focusTarget.nativeElement?.firstChild.focus();
     }
   }
 }
